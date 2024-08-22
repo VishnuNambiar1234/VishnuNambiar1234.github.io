@@ -3,76 +3,189 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vishnu Nambiar - Resume</title>
+    <title>Vishnu Nambiar - Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Roboto', sans-serif;
             margin: 0;
-            padding: 20px;
-            background-color: #f4f4f4;
-            color: #333;
+            padding: 0;
+            background-color: #121212;
+            color: #FFFFFF;
+        }
+        nav {
+            background-color: #1E1E1E;
+            padding: 15px 30px;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+        }
+        nav .logo {
+            font-size: 1.5em;
+            font-weight: bold;
+        }
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+        nav ul li {
+            margin: 0 15px;
+        }
+        nav ul li a {
+            color: #FFFFFF;
+            text-decoration: none;
+            font-weight: 700;
+            transition: color 0.3s;
+        }
+        nav ul li a:hover {
+            color: #1E90FF;
         }
         .container {
-            max-width: 800px;
+            padding: 100px 20px;
+            max-width: 1000px;
             margin: 0 auto;
-            background: #fff;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
-        h1, h2, h3 {
-            color: #0056b3;
+        .hero {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 50px;
+            transition: transform 0.3s ease;
         }
-        ul {
-            list-style-type: none;
-            padding: 0;
+        .hero:hover {
+            transform: scale(1.05);
         }
-        ul li {
-            padding: 5px 0;
+        .hero img {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid #1E90FF;
+            animation: bounceIn 2s ease;
+        }
+        .hero-text {
+            max-width: 600px;
+            animation: fadeInRight 1.5s ease;
+        }
+        .hero-text h1 {
+            font-size: 3em;
+            margin-bottom: 10px;
+        }
+        .hero-text p {
+            font-size: 1.2em;
+            line-height: 1.5;
         }
         .section {
-            margin-bottom: 20px;
+            margin-bottom: 50px;
+            animation: fadeInUp 1.5s ease;
+            transition: transform 0.3s ease;
+        }
+        .section:hover {
+            transform: scale(1.05);
         }
         .section h2 {
-            border-bottom: 2px solid #0056b3;
-            padding-bottom: 5px;
+            font-size: 2.5em;
+            border-bottom: 2px solid #1E90FF;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
         }
-        .links a {
-            color: #0056b3;
+        .section p, .section ul {
+            font-size: 1.1em;
+            line-height: 1.7;
+        }
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #1E1E1E;
+            color: #FFFFFF;
+        }
+        footer a {
+            color: #1E90FF;
             text-decoration: none;
+            transition: color 0.3s;
         }
-        .links a:hover {
-            text-decoration: underline;
+        footer a:hover {
+            color: #FFFFFF;
+        }
+
+        /* Animations */
+        @keyframes fadeInRight {
+            0% { opacity: 0; transform: translateX(30px); }
+            100% { opacity: 1; transform: translateX(0); }
+        }
+        @keyframes fadeInUp {
+            0% { opacity: 0; transform: translateY(30px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes bounceIn {
+            0%, 20%, 50%, 80%, 100% {transform: translateY(0);}  
+            40% {transform: translateY(-30px);}  
+            60% {transform: translateY(-15px);}  
+        }
+
+        /* Media Queries */
+        @media (max-width: 768px) {
+            .hero {
+                flex-direction: column;
+                text-align: center;
+            }
+            .hero-text {
+                margin-top: 20px;
+            }
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>Vishnu Nambiar</h1>
-        <p>Email: <a href="mailto:vsn210000@utdallas.edu">vsn210000@utdallas.edu</a></p>
-        <p>Phone: (469) 403-3048</p>
-        <p class="links">
-            <a href="https://www.linkedin.com/in/vishnu-nambiar-951652226/">LinkedIn</a> |
-            <a href="https://github.com/VishnuNambiar1234">GitHub</a>
-        </p>
+    <nav>
+        <div class="logo">Vishnu Nambiar</div>
+        <ul>
+            <li><a href="#about">About Me</a></li>
+            <li><a href="#education">Education</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#awards">Awards</a></li>
+        </ul>
+    </nav>
 
-        <div class="section">
+    <div class="container">
+        <!-- About Me Section -->
+        <section id="about" class="hero">
+            <img src="profile-pic.jpg" alt="Vishnu Nambiar Profile Picture">
+            <div class="hero-text">
+                <h1>Hello, I'm Vishnu Nambiar</h1>
+                <p>I'm an aspiring actuary and data scientist with a passion for technology and problem-solving. I am currently studying at the University of Texas at Dallas, where I am honing my skills in actuarial science and data science. Welcome to my portfolio!</p>
+            </div>
+        </section>
+
+        <!-- Education Section -->
+        <section id="education" class="section">
             <h2>Education</h2>
             <p><strong>University of Texas at Dallas</strong>, Richardson, TX</p>
             <p>Actuarial Science (B.S.), Data Science (B.S.)</p>
             <p>Expected: May 2026 | GPA: 3.9</p>
-        </div>
+        </section>
 
-        <div class="section">
+        <!-- Skills Section -->
+        <section id="skills" class="section">
             <h2>Skills</h2>
             <ul>
                 <li>Programming Languages: Python, Java, C#, Swift, SQL, C++, HTML/CSS, R</li>
                 <li>Libraries: Pandas, Beautiful Soup, Flask, LangChain, Selenium, PyTorch, PyQt, Google Cloud Platform, TensorFlow</li>
                 <li>Development Tools: Visual Studio/Code, RStudio, Jupyter Notebook, Git, Office 365, Google Suite, Postman</li>
             </ul>
-        </div>
+        </section>
 
-        <div class="section">
+        <!-- Experience Section -->
+        <section id="experience" class="section">
             <h2>Experience</h2>
             <h3>Actuarial Intern — Aon (June - August 2024)</h3>
             <ul>
@@ -92,9 +205,10 @@
             <ul>
                 <li>Maintained school computer systems, deployed mobile Chromebook stations, managed devices for 1000+ students, and established computer labs and classroom PCs</li>
             </ul>
-        </div>
+        </section>
 
-        <div class="section">
+        <!-- Projects Section -->
+        <section id="projects" class="section">
             <h2>Personal Projects</h2>
             <h3>AI Travel Agent (June - August 2023)</h3>
             <p>Python, CSS/Bootstrap, Selenium, LangChain, Flask, HTML</p>
@@ -115,24 +229,21 @@
             <ul>
                 <li>Led the development of RenoVision, an innovative app that combines LiDAR and ARKit for advanced property valuation, alongside a TensorFlow model and Flask backend for efficient data processing on Google Cloud</li>
             </ul>
-        </div>
+        </section>
 
-        <div class="section">
-            <h2>Exams</h2>
-            <ul>
-                <li>SOA Exam P - 8, May 2023</li>
-                <li>SOA Exam FM - 8, December 2023</li>
-            </ul>
-        </div>
-
-        <div class="section">
+        <!-- Awards Section -->
+        <section id="awards" class="section">
             <h2>Awards</h2>
             <ul>
                 <li>Locke Lord Award - 3rd Overall - DFW IT Talent Champion Competition (September 2023)</li>
                 <li>2nd in Market Competition - Team Brown Bats, UTD Auto Ratemaking Actuarial Case Competition (March 2023)</li>
                 <li>Eagle Scout - Boy Scouts of America (October 2022)</li>
             </ul>
-        </div>
+        </section>
     </div>
+
+    <footer>
+        <p>© 2024 Vishnu Nambiar | <a href="https://www.linkedin.com/in/vishnu-nambiar-951652226/">LinkedIn</a> | <a href="https://github.com/VishnuNambiar1234">GitHub</a></p>
+    </footer>
 </body>
 </html>
